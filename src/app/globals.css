@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-rubik);
+}
+
+@layer base {
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
