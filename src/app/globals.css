@@ -1,11 +1,62 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blue: #5747ea;
+  --color-very-dark-blue: #0e1323;
+  --color-dark-blue: #1c204b;
+  --color-dark-blue-hover: #33397a;
+  --color-desaturated-blue: #7d85ce;
+  --color-pale-blue: #bbc0ff;
+  --color-pale-blue-on-blue: #daddff;
+
+  --color-work: #ff8b64;
+  --color-work-icon: #d96c47;
+  --color-play: #55c2e6;
+  --color-play-icon: #3f9cbb;
+  --color-study: #ff5e7d;
+  --color-study-icon: #f04667;
+  --color-exercise: #4bcf82;
+  --color-exercise-icon: #29ba66;
+  --color-social: #7335d2;
+  --color-social-icon: #5a1cbb;
+  --color-self-care: #f1c75b;
+  --color-self-care-icon: #e6a532;
+
+  --container-page: 69.375rem;
+
+  --text-label: 0.9375rem;
+  --text-label--line-height: normal;
+  --text-title: 1.125rem;
+  --text-title--line-height: normal;
+  --text-name-sm: 1.5rem;
+  --text-name-sm--line-height: normal;
+  --text-name: 2.5rem;
+  --text-name--line-height: normal;
+  --text-hours-sm: 2rem;
+  --text-hours-sm--line-height: normal;
+  --text-hours: 3.5rem;
+  --text-hours--line-height: normal;
+
+  --radius-card: 0.9375rem;
+}
+
 @theme inline {
   --font-sans: var(--font-rubik);
 }
 
 @layer base {
+  body {
+    @apply bg-very-dark-blue text-white;
+  }
+  a,
+  button {
+    @apply v-focus-ring;
+  }
   button:not(:disabled) {
     @apply cursor-pointer;
   }
+}
+
+@utility v-focus-ring {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
 }
