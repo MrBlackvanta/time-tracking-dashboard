@@ -30,9 +30,9 @@
   --text-label--line-height: normal;
   --text-title: 1.125rem;
   --text-title--line-height: normal;
-  --text-name-sm: 1.5rem;
+  --text-name-sm: min(1.5rem, 6.5vw);
   --text-name-sm--line-height: normal;
-  --text-name: 2.5rem;
+  --text-name: 2.125rem;
   --text-name--line-height: normal;
   --text-hours-sm: 2rem;
   --text-hours-sm--line-height: normal;

@@ -85,6 +85,22 @@ are rotated, so the file reports their untransformed bounds. Rasterising each SV
 scale and offset for best overlap against the painted JPG recovers natural size (scale 0.985 to
 1.013, IoU 0.886 to 0.930) with a per-card offset off the top-right corner.
 
+**The report is mine, not Jeremy Robson's**, so the avatar is my own photograph and the name is
+my own. That name does not fit the design's type scale. `Abdelrhman` is one unbreakable
+ten-character word measuring 221px at the design's 40px, against the 191px the desktop panel
+leaves inside its 32px insets, so the desktop name ships at **34px** — the largest size that fits,
+with 3.2px to spare at 35px overflowing. It still wraps to two lines as the design draws it, and
+the purple card comes out 341px tall rather than 355.
+
+Below the desktop breakpoint the name also needs help at the very small end. At 24px it wraps to
+two lines from 375 down, which is fine, but by 320 the word alone is 132.6px against 124px of room
+beside the 64px avatar, and being unbreakable it pushed the page into horizontal scroll. The size
+token is therefore `min(1.5rem, 6.5vw)`: exactly the design's 24px at every width from 369 up,
+easing to 20.8px at 320 where it has 9px of slack. The knock-on is that the mobile panel is 147px
+rather than 133, and the text block being taller than the avatar now centres the avatar against
+the text rather than the other way round. From 768 up the name fits on one line and the panel is
+back to the design's height.
+
 **The activity colour is a band, not the card's background.** The design draws it as a 255x160
 shape on a 244px card, so it stops 84px short of the bottom, where the dark body has covered it
 anyway. Painting it as the card's background instead puts two identical 15px radii on the same
