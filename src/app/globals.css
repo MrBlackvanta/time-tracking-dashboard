@@ -22,6 +22,8 @@
   --color-self-care: #f1c75b;
   --color-self-care-icon: #e6a532;
 
+  --breakpoint-lg: 72.375rem;
+
   --container-page: 69.375rem;
 
   --text-label: 0.9375rem;
@@ -59,4 +61,21 @@
 
 @utility v-focus-ring {
   @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+}
+
+@utility v-focus-ring-peer {
+  @apply peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white;
+}
+
+@utility v-footer-link {
+  @apply underline transition-colors hover:text-white motion-reduce:transition-none;
+}
+
+.v-dashboard:has(#timeframe-daily:checked)
+  [data-timeframe]:not([data-timeframe="daily"]),
+.v-dashboard:has(#timeframe-weekly:checked)
+  [data-timeframe]:not([data-timeframe="weekly"]),
+.v-dashboard:has(#timeframe-monthly:checked)
+  [data-timeframe]:not([data-timeframe="monthly"]) {
+  display: none;
 }

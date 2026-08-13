@@ -1,6 +1,8 @@
 export default function SocialIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      width={75}
+      height={100}
       viewBox="0 0 75 100"
       fill="currentColor"
       aria-hidden="true"

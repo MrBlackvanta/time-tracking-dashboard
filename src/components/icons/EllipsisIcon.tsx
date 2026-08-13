@@ -1,6 +1,8 @@
 export default function EllipsisIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      width={21}
+      height={5}
       viewBox="0 0 21 5"
       fill="currentColor"
       aria-hidden="true"

@@ -1,6 +1,8 @@
 export default function ExerciseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      width={81}
+      height={55}
       viewBox="0 0 81 55"
       fill="currentColor"
       aria-hidden="true"

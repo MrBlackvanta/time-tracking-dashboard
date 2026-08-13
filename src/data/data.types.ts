@@ -17,5 +17,6 @@ export type Activity = {
   id: "work" | "play" | "study" | "exercise" | "social" | "self-care";
   title: string;
   icon: Icon;
+  artwork: { top: number; right: number };
   hours: Record<TimeframeId, Hours>;
 };
