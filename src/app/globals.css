@@ -46,6 +46,12 @@
   --font-sans: var(--font-rubik);
 }
 
+@property --hours {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
 @layer base {
   body {
     @apply bg-very-dark-blue text-white;
@@ -71,6 +77,28 @@
   @apply underline transition-colors hover:text-white motion-reduce:transition-none;
 }
 
+@keyframes v-count-up {
+  from {
+    --hours: 0;
+  }
+}
+
+@utility v-hours {
+  --hours: var(--hours-weekly);
+  counter-reset: hours var(--hours);
+  transition: --hours 500ms ease-out;
+  animation: v-count-up 900ms ease-out;
+
+  &::before {
+    content: counter(hours);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+  }
+}
+
 .v-dashboard:has(#timeframe-daily:checked)
   [data-timeframe]:not([data-timeframe="daily"]),
 .v-dashboard:has(#timeframe-weekly:checked)
@@ -78,4 +106,12 @@
 .v-dashboard:has(#timeframe-monthly:checked)
   [data-timeframe]:not([data-timeframe="monthly"]) {
   display: none;
+}
+
+.v-dashboard:has(#timeframe-daily:checked) .v-hours {
+  --hours: var(--hours-daily);
+}
+
+.v-dashboard:has(#timeframe-monthly:checked) .v-hours {
+  --hours: var(--hours-monthly);
 }

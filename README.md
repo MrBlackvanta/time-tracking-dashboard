@@ -85,6 +85,24 @@ are rotated, so the file reports their untransformed bounds. Rasterising each SV
 scale and offset for best overlap against the painted JPG recovers natural size (scale 0.985 to
 1.013, IoU 0.886 to 0.930) with a per-card offset off the top-right corner.
 
+**The activity colour is a band, not the card's background.** The design draws it as a 255x160
+shape on a 244px card, so it stops 84px short of the bottom, where the dark body has covered it
+anyway. Painting it as the card's background instead puts two identical 15px radii on the same
+bottom corners, and the outer colour bleeds through the inner one's antialiased edge as a
+one-pixel hairline that the design does not have. The mobile frame does stack them, both shapes
+being the full 160, which Figma renders cleanly and a browser does not, so the band ships as a
+strip at every width.
+
+**The hours figures count up, which the design does not specify.** Each one animates from zero on
+load and tweens between values when the timeframe changes, 900ms and 500ms, both ease-out. It
+needs no JavaScript: `--hours` is a registered `@property` integer, so it interpolates, and the
+number itself is a counter (`counter-reset` on the element, `content: counter(hours)` in a
+`::before`) with the same `:has()` rules that swap the labels feeding it the selected timeframe's
+value. Both are dropped under `prefers-reduced-motion`. The cost of generated content is that it
+cannot be selected or found with Ctrl+F, so the animated figure is `aria-hidden` and the real
+value ships as visually hidden text on the previous-period line, which reads as
+"32hrs. Last Week - 36hrs".
+
 **The `Desktop - Active` frame stacks a discarded variant under every card**, all of it flagged
 visible: lighter strips (`#FB9D7D`, `#7FCAE3`, `#E13556`), artwork blown up to 111 to 122px,
 Rubik Black titles, and values truncated to `32hr`, `10hr`, `4hr`. It is not the hover state.
