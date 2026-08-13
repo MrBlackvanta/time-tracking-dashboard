@@ -1,6 +1,8 @@
 export default function PlayIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      width={76}
+      height={77}
       viewBox="0 0 76 77"
       fill="currentColor"
       aria-hidden="true"

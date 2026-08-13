@@ -1,6 +1,8 @@
 export default function WorkIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      width={79}
+      height={79}
       viewBox="0 0 79 79"
       fill="currentColor"
       aria-hidden="true"

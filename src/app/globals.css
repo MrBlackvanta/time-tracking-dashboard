@@ -22,15 +22,17 @@
   --color-self-care: #f1c75b;
   --color-self-care-icon: #e6a532;
 
+  --breakpoint-lg: 72.375rem;
+
   --container-page: 69.375rem;
 
   --text-label: 0.9375rem;
   --text-label--line-height: normal;
   --text-title: 1.125rem;
   --text-title--line-height: normal;
-  --text-name-sm: 1.5rem;
+  --text-name-sm: min(1.5rem, 6.5vw);
   --text-name-sm--line-height: normal;
-  --text-name: 2.5rem;
+  --text-name: 2.125rem;
   --text-name--line-height: normal;
   --text-hours-sm: 2rem;
   --text-hours-sm--line-height: normal;
@@ -42,6 +44,12 @@
 
 @theme inline {
   --font-sans: var(--font-rubik);
+}
+
+@property --hours {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
 }
 
 @layer base {
@@ -59,4 +67,51 @@
 
 @utility v-focus-ring {
   @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+}
+
+@utility v-focus-ring-peer {
+  @apply peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white;
+}
+
+@utility v-footer-link {
+  @apply underline transition-colors hover:text-white motion-reduce:transition-none;
+}
+
+@keyframes v-count-up {
+  from {
+    --hours: 0;
+  }
+}
+
+@utility v-hours {
+  --hours: var(--hours-weekly);
+  counter-reset: hours var(--hours);
+  transition: --hours 500ms ease-out;
+  animation: v-count-up 900ms ease-out;
+
+  &::before {
+    content: counter(hours);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+  }
+}
+
+.v-dashboard:has(#timeframe-daily:checked)
+  [data-timeframe]:not([data-timeframe="daily"]),
+.v-dashboard:has(#timeframe-weekly:checked)
+  [data-timeframe]:not([data-timeframe="weekly"]),
+.v-dashboard:has(#timeframe-monthly:checked)
+  [data-timeframe]:not([data-timeframe="monthly"]) {
+  display: none;
+}
+
+.v-dashboard:has(#timeframe-daily:checked) .v-hours {
+  --hours: var(--hours-daily);
+}
+
+.v-dashboard:has(#timeframe-monthly:checked) .v-hours {
+  --hours: var(--hours-monthly);
 }

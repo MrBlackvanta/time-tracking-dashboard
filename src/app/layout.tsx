@@ -38,6 +38,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#0E1323",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -47,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${rubik.variable} antialiased`}>
-      <body className="flex min-h-dvh flex-col">{children}</body>
+      <body className="grid min-h-dvh grid-rows-[1fr_auto]">{children}</body>
     </html>
   );
 }
