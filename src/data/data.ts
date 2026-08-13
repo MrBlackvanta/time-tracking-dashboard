@@ -8,7 +8,7 @@ import {
 } from "@/components/icons";
 import type { Activity, Timeframe } from "./data.types";
 
-export const reportSubject = "Jeremy Robson";
+export const reportSubject = "Abdelrhman Abdelaal";
 
 export const timeframes: Timeframe[] = [
   { id: "daily", label: "Daily", previousLabel: "Yesterday" },

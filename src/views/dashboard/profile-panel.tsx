@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avatar from "@/assets/images/avatar-jeremy.webp";
+import avatar from "@/assets/images/avatar-abdelrhman.webp";
 import { reportSubject } from "@/data";
 import TimeframeFilter from "./timeframe-filter";
 
