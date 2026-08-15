@@ -21,7 +21,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 ### Links
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/time-tracking-dashboard)
-- Live Site URL: [Netlify](https://vanta-time-tracking-dashboard.netlify.app)
+- Live Site URL: [Cloudflare](https://time-tracking-dashboard.abdelrhman-ahmed8881.workers.dev)
+- Mirror: [Netlify](https://vanta-time-tracking-dashboard.netlify.app)
 
 ## My process
 

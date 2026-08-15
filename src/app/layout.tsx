@@ -12,7 +12,7 @@ const rubik = Rubik({
 const title = "Time tracking dashboard";
 const description =
   "A time tracking dashboard reporting hours spent on work, play, study, exercise, social and self care, switchable between daily, weekly and monthly views — a Frontend Mentor challenge built with Next.js, TypeScript, and Tailwind CSS.";
-const siteUrl = "https://vanta-time-tracking-dashboard.netlify.app";
+const siteUrl = "https://time-tracking-dashboard.abdelrhman-ahmed8881.workers.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
