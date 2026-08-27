@@ -22,7 +22,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/time-tracking-dashboard)
 - Live Site URL: [Cloudflare](https://time-tracking-dashboard.abdelrhman-ahmed8881.workers.dev)
-- Mirror: [Netlify](https://vanta-time-tracking-dashboard.netlify.app)
 
 ## My process
 
@@ -144,6 +143,6 @@ the wrapped label is still shorter than the hours figure beside it.
 
 ## Author
 
-- UpWork - [Abdelrhman Abdelaal](https://upwork.com/freelancers/~01f0a9479696b61f49)
+- UpWork - [Abdelrhman Abdelaal](https://www.upwork.com/freelancers/mrblackvanta)
 - Frontend Mentor - [@MrBlackvanta](https://www.frontendmentor.io/profile/MrBlackvanta)
 - LinkedIn - [Abdelrhman Abdelaal](https://www.linkedin.com/in/abdelrhman-vanta/)
