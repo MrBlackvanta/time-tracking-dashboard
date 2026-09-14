@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
+import { siteUrl } from "@/app/site";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -11,10 +12,7 @@ const rubik = Rubik({
 
 const title = "Time tracking dashboard";
 const description =
-  "A time tracking dashboard reporting hours spent on work, play, study, exercise, social and self care, switchable between daily, weekly and monthly views — a Frontend Mentor challenge built with Next.js, TypeScript, and Tailwind CSS.";
-const siteUrl =
-  "https://time-tracking-dashboard.abdelrhman-ahmed8881.workers.dev";
-
+  "A time tracking dashboard reporting hours spent on work, play, study, exercise, social and self care, switchable between daily, weekly and monthly views.";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
