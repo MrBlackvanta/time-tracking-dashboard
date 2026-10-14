@@ -1,6 +1,6 @@
+import { siteUrl } from "@/app/site";
 import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
-import { siteUrl } from "@/app/site";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -10,9 +10,18 @@ const rubik = Rubik({
   display: "swap",
 });
 
-const title = "Time tracking dashboard";
+const siteName = "Time Tracking Dashboard";
+const title = `${siteName} | Hours by activity`;
 const description =
-  "A time tracking dashboard reporting hours spent on work, play, study, exercise, social and self care, switchable between daily, weekly and monthly views.";
+  "Where the hours went across work, play, study, exercise, social and self care, each against the period before, by the day, the week or the month.";
+
+const card = {
+  url: "/opengraph-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Time Tracking Dashboard, with a week of hours across six activities",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
@@ -22,14 +31,16 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    siteName: title,
+    siteName,
     locale: "en_US",
     type: "website",
+    images: [card],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
+    images: [card],
   },
 };
 
